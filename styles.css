@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.project-img-wrapper {
+    width: 100%;
+    height: 200px; /* Set a fixed height for all images */
+    overflow: hidden; /* Ensure content outside the bounds is hidden */
+    position: relative;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops and fills the image within the fixed dimensions */
+    object-position: center; /* Centers the cropped area */
+}
+
+.navbar {
+    position: sticky;
+}
+
