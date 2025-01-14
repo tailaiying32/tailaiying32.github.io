@@ -68,17 +68,17 @@ footer {
 
 body.dark-mode {
     background-color: #121212;
-    color: #ffffff;
+    color: #cccccc;
 }
 
 .card.dark-mode {
     background-color: #1e1e1e;
-    color: #ffffff;
+    color: #cccccc;
     border: 1px solid #444;
 }
 
 .card.dark-mode .card-title {
-    color: #ffffff;
+    color: #cccccc;
 }
 
 .card.dark-mode .card-text {
@@ -86,13 +86,13 @@ body.dark-mode {
 }
 
 .btn-outline-primary.dark-mode {
-    color: #ffffff;
-    border-color: #ffffff;
+    color: #cccccc;
+    border-color: #cccccc;
 }
 
 .btn-outline-primary.dark-mode:hover {
     background-color: #444;
-    border-color: #ffffff;
+    border-color: #cccccc;
 }
 
 
