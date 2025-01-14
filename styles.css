@@ -32,10 +32,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.dark-mode {
-    background-color: #212529;
-    color: #f8f9fa;
-}
 
 .section-title {
     border-bottom: 2px solid #ddd;
@@ -105,4 +101,34 @@ body.dark-mode {
 .navbar-toggler:hover,
 .navbar-toggler:active {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-body {
+    flex-grow: 1; /* Ensures card-body stretches to fill remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Evenly distributes elements in the card body */
+}
+
+.card-title {
+    min-height: 50px; /* Ensures consistent title height across cards */
+}
+
+.card-text {
+    flex-grow: 1; /* Makes card text take up equal space */
+    margin-bottom: 1rem; /* Adds spacing below the text */
+}
+
+.project-img {
+    object-fit: cover;
+    border-radius: inherit;
+    border-bottom-right-radius: 0%;
+    border-bottom-left-radius: 0%;
 }
