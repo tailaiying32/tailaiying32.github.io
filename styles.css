@@ -66,6 +66,36 @@ footer {
     z-index: 1000;
 }
 
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.card.dark-mode {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border: 1px solid #444;
+}
+
+.card.dark-mode .card-title {
+    color: #ffffff;
+}
+
+.card.dark-mode .card-text {
+    color: #cccccc;
+}
+
+.btn-outline-primary.dark-mode {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn-outline-primary.dark-mode:hover {
+    background-color: #444;
+    border-color: #ffffff;
+}
+
+
 .navbar-toggler:focus {
     outline: none;
     border: none;
