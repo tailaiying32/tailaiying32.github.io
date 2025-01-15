@@ -118,7 +118,7 @@ body.dark-mode {
 }
 
 .card-title {
-    min-height: 50px; /* Ensures consistent title height across cards */
+    min-height: 30px; /* Ensures consistent title height across cards */
 }
 
 .card-text {
