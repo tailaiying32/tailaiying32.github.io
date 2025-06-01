@@ -25,12 +25,15 @@
     position: sticky;
 }
 
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-    color: #212529;
-    transition: background-color 0.3s, color 0.3s;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  transition: background-color 0.3s, color 0.3s;
 }
+
+
 
 
 .section-title {
