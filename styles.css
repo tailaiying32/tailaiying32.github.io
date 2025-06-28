@@ -54,9 +54,6 @@ footer {
     border-top: 1px solid #ddd;
 }
 
-.dark-mode footer {
-    border-top: 1px solid #444;
-}
 
 .dark-mode-toggle {
     position: fixed;
@@ -65,33 +62,39 @@ footer {
     z-index: 1000;
 }
 
-body.dark-mode {
-    background-color: #121212;
-    color: #cccccc;
-}
+@media (prefers-color-scheme: dark) {
+    body.dark-mode {
+        background-color: #121212;
+        color: #cccccc;
+    }
 
-.card.dark-mode {
-    background-color: #1e1e1e;
-    color: #cccccc;
-    border: 1px solid #444;
-}
+    .card.dark-mode {
+        background-color: #1e1e1e;
+        color: #cccccc;
+        border: 1px solid #444;
+    }
 
-.card.dark-mode .card-title {
-    color: #cccccc;
-}
+    .card.dark-mode .card-title {
+        color: #cccccc;
+    }
 
-.card.dark-mode .card-text {
-    color: #cccccc;
-}
+    .card.dark-mode .card-text {
+        color: #cccccc;
+    }
 
-.btn-outline-primary.dark-mode {
-    color: #cccccc;
-    border-color: #cccccc;
-}
+    .btn-outline-primary.dark-mode {
+        color: #cccccc;
+        border-color: #cccccc;
+    }
 
-.btn-outline-primary.dark-mode:hover {
-    background-color: #444;
-    border-color: #cccccc;
+    .btn-outline-primary.dark-mode:hover {
+        background-color: #444;
+        border-color: #cccccc;
+    }
+
+    .dark-mode footer {
+        border-top: 1px solid #444;
+    }
 }
 
 
