@@ -1,603 +1,775 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>Tailai Ying - Portfolio</title>
+		<meta name="description" content="Portfolio of Tailai Ying" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta
+			name="google-site-verification"
+			content="IyeA2m3evKjX3J8tW89mrh0NTHWVGQU0psaQzW24WQM"
+		/>
+		<meta
+			name="keywords"
+			content="Tailai, tailai, Tailai Ying, tailai ying, Ying, ying, Cornell, cornell, 32, tailaiying32, Tailai github, Tailai cornell, Salt Lake City, Utah, Salt Lake, ithaca, new york, auto, autodrone, communicare, cornell autodrone, cuad, CUAD"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<style>
+			/* Reset and base styles */
+			* {
+				margin: 0;
+				padding: 0;
+			}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Tailai Ying - Portfolio</title>
-    <meta name="description" content="Portfolio of Tailai Ying">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="google-site-verification" content="IyeA2m3evKjX3J8tW89mrh0NTHWVGQU0psaQzW24WQM" />
-    <meta name="keywords"
-        content="Tailai, tailai, Tailai Ying, tailai ying, Ying, ying, Cornell, cornell, 32, tailaiying32, Tailai github, Tailai cornell, Salt Lake City, Utah, Salt Lake, ithaca, new york, auto, autodrone, communicare, cornell autodrone, cuad, CUAD" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-        }
+			/* Smooth scroll behavior */
+			html {
+				scroll-behavior: smooth;
+			}
 
-        /* Smooth scroll behavior */
-        html {
-            scroll-behavior: smooth;
-        }
+			/* Base styles for light mode */
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f8f9fa;
+				color: #212529;
+				transition: background-color 0.3s, color 0.3s;
+			}
 
-        /* Base styles for light mode */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #212529;
-            transition: background-color 0.3s, color 0.3s;
-        }
+			/* Dark mode media query - automatically applies when system is in dark mode */
+			@media (prefers-color-scheme: dark) {
+				body {
+					background-color: #121212;
+					color: #cccccc;
+				}
 
-        /* Dark mode media query - automatically applies when system is in dark mode */
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #121212;
-                color: #cccccc;
-            }
+				.navbar-light {
+					background-color: #1e1e1e !important;
+				}
 
-            .navbar-light {
-                background-color: #1e1e1e !important;
-            }
+				.navbar-light .navbar-brand,
+				.navbar-light .navbar-nav .nav-link {
+					color: #cccccc !important;
+				}
 
-            .navbar-light .navbar-brand,
-            .navbar-light .navbar-nav .nav-link {
-                color: #cccccc !important;
-            }
+				.navbar-light .navbar-toggler {
+					border-color: #444;
+				}
 
-            .navbar-light .navbar-toggler {
-                border-color: #444;
-            }
+				.navbar-light .navbar-toggler-icon {
+					background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+				}
 
-            .navbar-light .navbar-toggler-icon {
-                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-            }
+				.card {
+					background-color: #1e1e1e;
+					color: #cccccc;
+					border: 1px solid #444;
+				}
 
-            .card {
-                background-color: #1e1e1e;
-                color: #cccccc;
-                border: 1px solid #444;
-            }
+				.card .card-title {
+					color: #cccccc;
+				}
 
-            .card .card-title {
-                color: #cccccc;
-            }
+				.card .card-text {
+					color: #cccccc;
+				}
 
-            .card .card-text {
-                color: #cccccc;
-            }
+				.btn-outline-primary {
+					color: #cccccc;
+					border-color: #cccccc;
+				}
 
-            .btn-outline-primary {
-                color: #cccccc;
-                border-color: #cccccc;
-            }
+				.btn-outline-primary:hover {
+					background-color: #444;
+					border-color: #cccccc;
+					color: #cccccc;
+				}
 
-            .btn-outline-primary:hover {
-                background-color: #444;
-                border-color: #cccccc;
-                color: #cccccc;
-            }
+				.section-title {
+					border-bottom: 2px solid #444;
+				}
 
-            .section-title {
-                border-bottom: 2px solid #444;
-            }
+				footer {
+					border-top: 1px solid #444;
+				}
+			}
 
-            footer {
-                border-top: 1px solid #444;
-            }
-        }
+			/* Manual dark mode classes (for toggle functionality) */
+			body.dark-mode {
+				background-color: #121212;
+				color: #cccccc;
+			}
 
-        /* Manual dark mode classes (for toggle functionality) */
-        body.dark-mode {
-            background-color: #121212;
-            color: #cccccc;
-        }
+			.card.dark-mode {
+				background-color: #1e1e1e;
+				color: #cccccc;
+				border: 1px solid #444;
+			}
 
-        .card.dark-mode {
-            background-color: #1e1e1e;
-            color: #cccccc;
-            border: 1px solid #444;
-        }
+			.card.dark-mode .card-title {
+				color: #cccccc;
+			}
 
-        .card.dark-mode .card-title {
-            color: #cccccc;
-        }
+			.card.dark-mode .card-text {
+				color: #cccccc;
+			}
 
-        .card.dark-mode .card-text {
-            color: #cccccc;
-        }
+			.btn-outline-primary.dark-mode {
+				color: #cccccc;
+				border-color: #cccccc;
+			}
 
-        .btn-outline-primary.dark-mode {
-            color: #cccccc;
-            border-color: #cccccc;
-        }
+			.btn-outline-primary.dark-mode:hover {
+				background-color: #444;
+				border-color: #cccccc;
+			}
 
-        .btn-outline-primary.dark-mode:hover {
-            background-color: #444;
-            border-color: #cccccc;
-        }
+			/* Project image styles */
+			.project-img-wrapper {
+				width: 100%;
+				height: 200px;
+				overflow: hidden;
+				position: relative;
+			}
 
-        /* Project image styles */
-        .project-img-wrapper {
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
+			.project-img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				border-radius: inherit;
+				border-bottom-right-radius: 0%;
+				border-bottom-left-radius: 0%;
+			}
 
-        .project-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: inherit;
-            border-bottom-right-radius: 0%;
-            border-bottom-left-radius: 0%;
-        }
+			/* Navigation styles */
+			.navbar {
+				position: sticky;
+			}
 
-        /* Navigation styles */
-        .navbar {
-            position: sticky;
-        }
+			.navbar-toggler:focus {
+				outline: none;
+				border: none;
+				box-shadow: none;
+			}
 
-        .navbar-toggler:focus {
-            outline: none;
-            border: none;
-            box-shadow: none;
-        }
+			.navbar-toggler:hover,
+			.navbar-toggler:active {
+				background-color: rgba(255, 255, 255, 0.1);
+			}
 
-        .navbar-toggler:hover,
-        .navbar-toggler:active {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+			/* Section styles */
+			.section-title {
+				border-bottom: 2px solid #ddd;
+				padding-bottom: 0.5rem;
+				margin-bottom: 1.5rem;
+			}
 
-        /* Section styles */
-        .section-title {
-            border-bottom: 2px solid #ddd;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+			/* Card styles */
+			.card {
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				overflow: hidden;
+			}
 
-        /* Card styles */
-        .card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            overflow: hidden;
-        }
+			.card-body {
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
 
-        .card-body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+			.card-title {
+				min-height: 30px;
+			}
 
-        .card-title {
-            min-height: 30px;
-        }
+			.card-text {
+				flex-grow: 1;
+				margin-bottom: 1rem;
+			}
 
-        .card-text {
-            flex-grow: 1;
-            margin-bottom: 1rem;
-        }
+			/* Footer styles */
+			footer {
+				text-align: center;
+				padding: 1rem 0;
+				border-top: 1px solid #ddd;
+			}
 
-        /* Footer styles */
-        footer {
-            text-align: center;
-            padding: 1rem 0;
-            border-top: 1px solid #ddd;
-        }
+			/* Dark mode toggle button */
+			.dark-mode-toggle {
+				position: fixed;
+				top: 1rem;
+				right: 1rem;
+				z-index: 1000;
+				background: rgba(0, 0, 0, 0.1);
+				border: none;
+				padding: 0.5rem;
+				border-radius: 0.5rem;
+				cursor: pointer;
+				transition: background-color 0.3s;
+			}
 
-        /* Dark mode toggle button */
-        .dark-mode-toggle {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.1);
-            border: none;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+			.dark-mode-toggle:hover {
+				background: rgba(0, 0, 0, 0.2);
+			}
 
-        .dark-mode-toggle:hover {
-            background: rgba(0, 0, 0, 0.2);
-        }
+			@media (prefers-color-scheme: dark) {
+				.dark-mode-toggle {
+					background: rgba(255, 255, 255, 0.1);
+					color: #cccccc;
+				}
 
-        @media (prefers-color-scheme: dark) {
-            .dark-mode-toggle {
-                background: rgba(255, 255, 255, 0.1);
-                color: #cccccc;
-            }
+				.dark-mode-toggle:hover {
+					background: rgba(255, 255, 255, 0.2);
+				}
+			}
 
-            .dark-mode-toggle:hover {
-                background: rgba(255, 255, 255, 0.2);
-            }
-        }
+			.project-img-wrapper {
+				width: 100%;
+				height: 200px;
+				/* Set a fixed height for all images */
+				overflow: hidden;
+				/* Ensure content outside the bounds is hidden */
+				position: relative;
+			}
 
-        .project-img-wrapper {
-            width: 100%;
-            height: 200px;
-            /* Set a fixed height for all images */
-            overflow: hidden;
-            /* Ensure content outside the bounds is hidden */
-            position: relative;
-        }
+			.project-img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				/* Crops and fills the image within the fixed dimensions */
+				object-position: center;
+				/* Centers the cropped area */
+			}
+		</style>
+	</head>
 
-        .project-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* Crops and fills the image within the fixed dimensions */
-            object-position: center;
-            /* Centers the cropped area */
-        }
-    </style>
-</head>
+	<body class="me">
+		<!-- Navigation Bar -->
+		<nav
+			class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm"
+		>
+			<div class="container">
+				<a class="navbar-brand fw-bold" href="#home">Tailai Ying</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNav"
+					aria-controls="navbarNav"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#biography">Biography</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#experience"
+								>Experience</a
+							>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#projects">Projects</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#skills">Skills</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="mailto:tty6@cornell.edu"
+								>Contact</a
+							>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-<body class="me">
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Tailai Ying</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#biography">Biography</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#experience">Experience</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="mailto:tty6@cornell.edu">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+		<!-- Header Section -->
+		<header class="container text-left py-5" id="home">
+			<div class="row align-items-center">
+				<!-- Headshot -->
+				<div class="col-md-3 text-right mb-3 mb-md-0">
+					<img
+						src="images/headshot.jpg"
+						alt="Tailai Ying - Computer Science Student at Cornell University"
+						class="rounded-circle img-fluid shadow"
+						style="width: 200px; height: 200px; object-fit: cover"
+					/>
+				</div>
+				<!-- Personal Info -->
+				<div class="col-md-9">
+					<h1 class="mb-3">Tailai Ying</h1>
+					<h5 class="">Undergraduate Student</h5>
+					<h5 class="mb-4">Cornell University</h5>
+					<!-- Links -->
+					<div class="d-flex justify-content-left gap-3">
+						<a
+							href="mailto:tty6@cornell.edu"
+							class="link-offset-1"
+							aria-label="Email Tailai Ying"
+							>Email</a
+						>
+						<a
+							href="https://www.linkedin.com/in/tailai-ying-099041260"
+							class="link-offset-1"
+							target="_blank"
+							aria-label="LinkedIn Profile"
+							>LinkedIn</a
+						>
+						<a
+							href="https://github.com/tailaiying32"
+							class="link-offset-1"
+							target="_blank"
+							aria-label="GitHub Profile"
+							>GitHub</a
+						>
+						<a
+							href="images/Tailai_Ying_Resume.pdf"
+							class="link-offset-1"
+							target="_blank"
+							aria-label="Download Resume"
+							>Resume</a
+						>
+					</div>
+				</div>
+			</div>
+		</header>
 
-    <!-- Header Section -->
-    <header class="container text-left py-5" id="home">
-        <div class="row align-items-center">
-            <!-- Headshot -->
-            <div class="col-md-3 text-right mb-3 mb-md-0">
-                <img src="images/headshot.jpg" alt="Tailai Ying - Computer Science Student at Cornell University"
-                    class="rounded-circle img-fluid shadow" style="width: 200px; height: 200px; object-fit: cover;">
-            </div>
-            <!-- Personal Info -->
-            <div class="col-md-9">
-                <h1 class="mb-3">Tailai Ying</h1>
-                <h5 class="">Undergraduate Student </h5>
-                <h5 class="mb-4">Cornell University</h5>
-                <!-- Links -->
-                <div class="d-flex justify-content-left gap-3">
-                    <a href="mailto:tty6@cornell.edu" class="link-offset-1" aria-label="Email Tailai Ying">Email</a>
-                    <a href="https://www.linkedin.com/in/tailai-ying-099041260" class="link-offset-1" target="_blank"
-                        aria-label="LinkedIn Profile">LinkedIn</a>
-                    <a href="https://github.com/tailaiying32" class="link-offset-1" target="_blank"
-                        aria-label="GitHub Profile">GitHub</a>
-                    <a href="images/Tailai_Ying_Resume.pdf" class="link-offset-1" target="_blank"
-                        aria-label="Download Resume">Resume</a>
-                </div>
-            </div>
-        </div>
-    </header>
+		<!-- Biography -->
+		<section class="container my-5" id="biography">
+			<h2 class="section-title">Biography</h2>
+			<p>
+				I am an undergraduate student studying Computer Science in the
+				College of Engineering at Cornell University. Currently, I'm a
+				Research Assistant at Cornell's EmPRISE Lab where I work on user
+				functionality aware caregiving robots, advised by PhD student
+				Ziang Liu and Professor Tapomayukh Bhattacharjee. In addition,
+				I'm a member of CUAD (Cornell Autonomous Drone), where I work on
+				the computer vision algorithms that power our drones' autonomy.
+			</p>
+			<p>
+				My experience spans full-stack software development, artificial
+				intelligence and machine learning, and robotics.
+			</p>
+			<p>
+				In my free time, I enjoy playing soccer and basketball, skiing
+				and snowboarding, hiking, cooking, and playing the piano.
+			</p>
+		</section>
 
-    <!-- Biography -->
-    <section class="container my-5" id="biography">
-        <h2 class="section-title">Biography</h2>
-        <p>
-            I am an undergraduate student studying Computer Science in the College of Engineering at Cornell University.
-            Currently, I'm a Research Assistant at Cornell's EmPRISE Lab where I work on user-aware caregiving robots
-            under guidance of PhD student Ziang Liu and Professor Tapomayukh Bhattacharjee.
-            
-            In addition, I'm a member of CUAD (Cornell Autonomous Drone), where I work on the computer
-            vision algorithms that power our drones' autonomy.
-        </p>
-        <p>
-            My experience spans full-stack software development, artificial intelligence and machine learning, and robotics.
-        </p>
-        <p>
-            In my free time, I enjoy playing soccer and basketball, skiing and snowboarding, hiking, cooking, and
-            playing the piano.
-        </p>
-    </section>
+		<!-- Experience Section -->
+		<section class="container my-5" id="experience">
+			<h2 class="section-title">Experience</h2>
+			<div>
+				<div class="mt-4">
+					<h3>EmPRISE Lab</h3>
+					<h5>Research Assistant</h5>
+					<p>
+						I'm working with user functionality-aware caregiving
+						robots. I extended Meta's MyoSuite into a scalable RL
+						research platform with quality of life changes and new
+						features, including a new policy for training patient
+						reachability under varying muscle deficiencies, CLI &
+						YAML configuration and parallelization with Hydra, and
+						data logging with Weights & Biases. This was deployed on
+						the Cornell HPC cluster, which greatly boosted RL
+						experimentation efficiency. I'm currently working on a
+						pipeline leveraging information theory and Bayesian
+						inference to adaptively select reachability tests to
+						identify patient functionality limitations with maximal
+						efficiency. Tests are dynamically selected on the fly to
+						learn about a patient's condition, eventually outputting
+						a probablistic distribution of potential functionality
+						models.
+					</p>
+				</div>
+				<div class="mt-4">
+					<h3>Aria Lab</h3>
+					<h5>Research Intern</h5>
+					<p>
+                        I extended Professor Daniel Brown's work on two two-dimensional
+                        swarm behavior to three dimensions. I built a 3D swarm simulation 
+                        platform in PyBullet complete with custom drone models,
+						configurable sensor and controller models, and automatic data
+						collection. I then integrated this platform with novelty search to
+                        explore the controller space and applied clustering algorithms to 
+                        discover and classify emergent three dimensional behavior.
+					</p>
+				</div>
+				<div class="mt-4">
+					<h3>CommuniCare</h3>
+					<h5>Technical Lead</h5>
+					<p>
+						I led the web development team to build a digital platform to
+						improve healthcare accessibility and outcomes for
+						underrepresented populations.
+					</p>
+				</div>
+				<div class="mt-4">
+					<h3>CUAD (Cornell Autonomous Drone)</h3>
+					<h5>CS Subteam Member</h5>
+					<p>
+						I work primarily with the computer vision and 
+                        image processing for our drones. I implemented a stereo camera based
+                        visual odometry model and combined with YOLOv10 object detection for depth 
+                        estimation and object localization.
+				</div>
+				<div class="mt-4">
+					<h3>Tutor</h3>
+					<h5>Freelance</h5>
+					<p>
+						Currently tutoring students in AMC math and CS topics such as
+						programming, data structures, and algorithms, while
+						providing support and guidance for self-directed
+						projects.
+					</p>
+				</div>
+			</div>
+		</section>
 
-    <!-- Experience Section -->
-    <section class="container my-5" id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div>
-            <div class="mt-4">
-                <h3>EmPRISE Lab</h3>
-                <h5>Research Assistant</h5>
-                <p>Working with user functionality-aware caregiving robots. Developed a novel
-                    reinforcement learning pipeline leverage MyoSuite's musculoskeletal models to dynamically
-                    adjust and adapt controllers to unique patient needs. Developing a end-to-end representation learning pipeline, leveraging Bayesian information gain and custom transformer architecture to generate and map adaptive physical tests to user reachability spaces.
-                </p>
-            </div>
-            <div class="mt-4">
-                <h3>Aria Lab</h3>
-                <h5>Research Intern</h5>
-                <p>Extended two-dimensional swarm behavior to three-dimensional space and deploying in drones.
-                    Developed a 3D swarm simulation framework in PyBullet complete with custom drone models, binary
-                    sensors, unicycle controller models, and automatic data collection, and integrated with novelty
-                    search and clustering algorithms to discover emergent collective behaviors.</p>
-            </div>
-            <div class="mt-4">
-                <h3>CommuniCare</h3>
-                <h5>Technical Lead</h5>
-                <p>Led development team to build a digital platform to improve healthcare accessibility and outcomes for
-                    underrepresented populations.</p>
-            </div>
-            <div class="mt-4">
-                <h3>CUAD (Cornell Autonomous Drone)</h3>
-                <h5>CS Subteam Member</h5>
-                <p>Contributing to autonomous drone software development. Implementing computer vision algorithms and
-                    navigation systems for drone autonomy projects at Cornell University.</p>
-            </div>
-            <div class="mt-4">
-                <h3>Tutor</h3>
-                <h5>Freelance</h5>
-                <p>Tutoring students in AMC math and CS topics such as programming, data structures, and algorithms,
-                    while providing
-                    support and guidance for self-directed projects.
-                </p>
-            </div>
-        </div>
-    </section>
+		<!-- Projects Section -->
+		<section class="container my-5" id="projects">
+			<h2 class="section-title">Projects</h2>
+			<div class="row gy-4">
+				<div class="col-md-4">
+					<div class="card rounded-4">
+						<div class="project-img-wrapper">
+							<img
+								src="images/aria.png"
+								alt="Swarm Simulator"
+								class="project-img"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Swarm Simulator</h3>
+							<p class="card-text">
+								A three-dimensional swarm simulator built with
+								PyBullet. Users are able to customize the number
+								of drones, the length of simulation, and the
+								length of logging. Integrated with novelty
+								search algorithm to discover unique controller
+								models.
+							</p>
+							<p>Built with: PyBullet, Python</p>
+							<a
+								href="https://github.com/tailaiying32/aria"
+								class="btn btn-outline-primary"
+								aria-label="View Swarm Simulator on GitHub"
+								>View on GitHub</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card rounded-4">
+						<div class="project-img-wrapper">
+							<img
+								src="images/critterevo.png"
+								alt="CritterEvo - Artificial Life Simulator Project Screenshot"
+								class="project-img"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">CritterEvo</h3>
+							<p class="card-text">
+								An artificial life simulator designed to model
+								evolution and natural selection. This Java-based
+								project simulates how organisms adapt to
+								environmental pressures over generations.
+							</p>
+							<p>Built with: Java</p>
+							<a
+								href="https://github.com/tailaiying32/CritterEvo"
+								class="btn btn-outline-primary"
+								aria-label="View CritterEvo on GitHub"
+								>View on GitHub</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card rounded-4">
+						<div class="project-img-wrapper">
+							<img
+								src="images/bigredhacks.png"
+								alt="Lockd - Smart Motorized Lock System Project Screenshot"
+								class="project-img"
+							/>
+						</div>
+						<div class="card-body">
+							<h3 class="card-title">Lockd</h3>
+							<p class="card-text">
+								A smart motorized lock system developed during
+								BigRed//Hacks. Won Finalist and Beginner's
+								Prize. This IoT solution provides secure, remote
+								access control to physical spaces.
+							</p>
+							<p>Built with: React Native, Flask</p>
+							<a
+								href="https://github.com/bigredhacks-LockD/lockd"
+								class="btn btn-outline-primary"
+								aria-label="View Lockd on GitHub"
+								>View on GitHub</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card rounded-4">
+						<div class="project-img-wrapper">
+							<img
+								src="images/ear-training-app.png"
+								alt="Ear trainer"
+								class="project-img"
+							/>
+						</div>
 
-    <!-- Projects Section -->
-    <section class="container my-5" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="row gy-4">
-            <div class="col-md-4">
-                <div class="card rounded-4">
-                    <div class="project-img-wrapper">
-                        <img src="images/aria.png" alt="Swarm Simulator" class="project-img">
-                    </div>
-                    <div class="card-body">
-                        <h3 class="card-title">Swarm Simulator</h3>
-                        <p class="card-text">A three-dimensional swarm simulator built with PyBullet. Users are able to
-                            customize the number of drones, the length of simulation, and the length of logging.
-                            Integrated with novelty search algorithm to discover unique controller models.</p>
-                        <p>Built with: PyBullet, Python</p>
-                        <a href="https://github.com/tailaiying32/aria" class="btn btn-outline-primary"
-                            aria-label="View Swarm Simulator on GitHub">View on
-                            GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card rounded-4">
-                    <div class="project-img-wrapper"> <img src="images/critterevo.png"
-                            alt="CritterEvo - Artificial Life Simulator Project Screenshot" class="project-img"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">CritterEvo</h3>
-                        <p class="card-text">An artificial life simulator designed to model evolution and natural
-                            selection. This Java-based project simulates how organisms adapt to environmental pressures
-                            over generations.</p>
-                        <p>Built with: Java</p>
-                        <a href="https://github.com/tailaiying32/CritterEvo" class="btn btn-outline-primary"
-                            aria-label="View CritterEvo on GitHub">View on
-                            GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card rounded-4">
-                    <div class="project-img-wrapper"><img src="images/bigredhacks.png"
-                            alt="Lockd - Smart Motorized Lock System Project Screenshot" class="project-img"></div>
-                    <div class="card-body">
-                        <h3 class="card-title">Lockd</h3>
-                        <p class="card-text">A smart motorized lock system developed during BigRed//Hacks. Won Finalist
-                            and Beginner's Prize. This IoT solution provides secure, remote access control to physical
-                            spaces.
-                        </p>
-                        <p>Built with: React Native, Flask</p>
-                        <a href="https://github.com/bigredhacks-LockD/lockd" class="btn btn-outline-primary"
-                            aria-label="View Lockd on GitHub">View on
-                            GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card rounded-4">
-                    <div class="project-img-wrapper"> <img src="images/ear-training-app.png" alt="Ear trainer"
-                            class="project-img"></div>
+						<div class="card-body">
+							<h3 class="card-title">Ear Trainer v2</h3>
+							<p class="card-text">
+								A new and improved ear training app, revamped
+								with a different tech stack and more efficient
+								code. Based on the 2022 RCM Piano Syllabus to
+								help students develop aural skills.
+							</p>
+							<p>Built with: Spring Boot, Angular, PostgreSQL</p>
+							<a
+								href="https://github.com/tailaiying32/eartrainer-backend"
+								class="btn btn-outline-primary"
+								aria-label="View Ear Trainer v2 on GitHub"
+								>View Backend on GitHub</a
+							>
+							<div class="my-1"></div>
+							<a
+								href="https://github.com/tailaiying32/eartrainer-frontend"
+								class="btn btn-outline-primary"
+								aria-label="View Ear Trainer v2 on GitHub"
+								>View Frontend on GitHub</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="card rounded-4">
+						<div class="project-img-wrapper">
+							<img
+								src="images/ear-training-app.png"
+								alt="Ear Training App Based on RCM 2022 Piano Syllabus Screenshot"
+								class="project-img"
+							/>
+						</div>
 
-                    <div class="card-body">
-                        <h3 class="card-title">Ear Trainer v2</h3>
-                        <p class="card-text">A new and improved ear training app, revamped with a different tech stack
-                            and more efficient code. Based on the 2022 RCM Piano Syllabus to help students develop aural
-                            skills.</p>
-                        <p>Built with: Spring Boot, Angular, PostgreSQL</p>
-                        <a href="https://github.com/tailaiying32/eartrainer-backend" class="btn btn-outline-primary"
-                            aria-label="View Ear Trainer v2 on GitHub">View Backend on GitHub</a>
-                        <div class="my-1"></div>
-                        <a href="https://github.com/tailaiying32/eartrainer-frontend" class="btn btn-outline-primary"
-                            aria-label="View Ear Trainer v2 on GitHub">View Frontend on GitHub</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card rounded-4">
-                    <div class="project-img-wrapper"> <img src="images/ear-training-app.png"
-                            alt="Ear Training App Based on RCM 2022 Piano Syllabus Screenshot" class="project-img">
-                    </div>
+						<div class="card-body">
+							<h3 class="card-title">Ear Trainer</h3>
+							<p class="card-text">
+								An ear training application based on the RCM
+								2022 Piano Syllabus. Helps music students
+								develop aural skills through interactive
+								exercises aligned with music education
+								standards.
+							</p>
+							<p>Built with: Next.js, Prisma ORM, PostgreSQL</p>
+							<a
+								href="https://github.com/tailaiying32/ear-training-app"
+								class="btn btn-outline-primary"
+								aria-label="View Ear Training App on GitHub"
+								>View on GitHub</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-                    <div class="card-body">
-                        <h3 class="card-title">Ear Trainer</h3>
-                        <p class="card-text">An ear training application based on the RCM 2022 Piano Syllabus. Helps
-                            music students develop aural skills through interactive exercises aligned with music
-                            education standards.</p>
-                        <p>Built with: Next.js, Prisma ORM, PostgreSQL</p>
-                        <a href="https://github.com/tailaiying32/ear-training-app" class="btn btn-outline-primary"
-                            aria-label="View Ear Training App on GitHub">View
-                            on GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Skills Section -->
+		<section class="container my-5" id="skills">
+			<h2 class="section-title mb-4">Skills</h2>
+			<div class="row g-4">
+				<div class="col-md-6">
+					<div class="d-flex gap-2 align-items-start">
+						<p class="fw-bold mb-0" style="min-width: 130px">
+							Languages:
+						</p>
+						<p class="mb-0">
+							Java, Python, JavaScript, TypeScript, HTML/CSS, SQL,
+							OCaml, Verilog, XML
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="d-flex gap-2 align-items-start">
+						<p class="fw-bold mb-0" style="min-width: 130px">
+							Web/App Dev:
+						</p>
+						<p class="mb-0">
+							React, Next.js, Express, Flask, Bootstrap,
+							TailwindCSS, Spring Boot, Angular, Prisma,
+							PostgreSQL
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="d-flex gap-2 align-items-start">
+						<p class="fw-bold mb-0" style="min-width: 130px">
+							AI/ML/Robotics:
+						</p>
+						<p class="mb-0">
+							PyTorch, OpenCV, NumPy, PyBullet, MyoSuite, MuJoCo,
+							Gymnasium, Stable-Baselines, depRL, ROS
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="d-flex gap-2 align-items-start">
+						<p class="fw-bold mb-0" style="min-width: 130px">
+							Tools & Tech:
+						</p>
+						<p class="mb-0">
+							Git, GitHub Actions, Postman, Figma, Docker,
+							Copilot, Hydra, Linux
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
 
-    <!-- Skills Section -->
-    <section class="container my-5" id="skills">
-        <h2 class="section-title mb-4">Skills</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="d-flex gap-2 align-items-start">
-                    <p class="fw-bold mb-0" style="min-width: 130px;">Languages:</p>
-                    <p class="mb-0">Java, Python, JavaScript, TypeScript, HTML/CSS, SQL, OCaml, Verilog, XML</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="d-flex gap-2 align-items-start">
-                    <p class="fw-bold mb-0" style="min-width: 130px;">Web/App Dev:</p>
-                    <p class="mb-0">React, Next.js, Express, Flask, Bootstrap, TailwindCSS, Spring Boot, Angular,
-                        Prisma, PostgreSQL</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="d-flex gap-2 align-items-start">
-                    <p class="fw-bold mb-0" style="min-width: 130px;">AI/ML/Robotics:</p>
-                    <p class="mb-0">PyTorch, OpenCV, NumPy, PyBullet, MyoSuite, MuJoCo, Gymnasium, Stable-Baselines, depRL, ROS</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="d-flex gap-2 align-items-start">
-                    <p class="fw-bold mb-0" style="min-width: 130px;">Tools & Tech:</p>
-                    <p class="mb-0">Git, GitHub Actions, Postman, Figma, Docker, Copilot, Hydra, Linux</p>
-                </div>
-            </div>
-        </div>
-    </section>
+		<!-- Footer Section with Schema.org structured data -->
+		<footer class="container mt-5">
+			<p>&copy; 2025 Tailai Ying | CS @ Cornell University</p>
+		</footer>
 
-    <!-- Footer Section with Schema.org structured data -->
-    <footer class="container mt-5">
-        <p>&copy; 2025 Tailai Ying | CS @ Cornell University</p>
-    </footer>
+		<!-- Schema.org structured data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Tailai Ying",
+				"url": "https://yourdomain.com",
+				"jobTitle": "Computer Science Student",
+				"worksFor": {
+					"@type": "Organization",
+					"name": "Cornell University"
+				},
+				"image": "https://yourdomain.com/images/headshot.jpg",
+				"email": "tty6@cornell.edu",
+				"sameAs": [
+					"https://www.linkedin.com/in/tailai-ying-099041260",
+					"https://github.com/tailaiying32"
+				]
+			}
+		</script>
 
-    <!-- Schema.org structured data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Tailai Ying",
-      "url": "https://yourdomain.com",
-      "jobTitle": "Computer Science Student",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Cornell University"
-      },
-      "image": "https://yourdomain.com/images/headshot.jpg",
-      "email": "tty6@cornell.edu",
-      "sameAs": [
-        "https://www.linkedin.com/in/tailai-ying-099041260",
-        "https://github.com/tailaiying32"
-      ]
-    }
-    </script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+			integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+			crossorigin="anonymous"
+		></script>
+		<script>
+			// Check system preference on page load
+			function checkSystemPreference() {
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)"
+				).matches;
+				const savedPreference = localStorage.getItem("darkMode");
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
-    <script>
-        // Check system preference on page load
-        function checkSystemPreference() {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const savedPreference = localStorage.getItem('darkMode');
+				// If user has a saved preference, use that; otherwise use system preference
+				if (
+					savedPreference === "true" ||
+					(savedPreference === null && prefersDark)
+				) {
+					enableDarkMode();
+				} else {
+					disableDarkMode();
+				}
+			}
 
-            // If user has a saved preference, use that; otherwise use system preference
-            if (savedPreference === 'true' || (savedPreference === null && prefersDark)) {
-                enableDarkMode();
-            } else {
-                disableDarkMode();
-            }
-        }
+			function enableDarkMode() {
+				document.body.classList.add("dark-mode");
+				const cards = document.querySelectorAll(".card");
+				cards.forEach((card) => card.classList.add("dark-mode"));
+				const buttons = document.querySelectorAll(
+					".btn-outline-primary"
+				);
+				buttons.forEach((btn) => btn.classList.add("dark-mode"));
+				const navbar = document.querySelector(".navbar");
+				navbar.classList.add("navbar-dark");
+				navbar.classList.add("bg-dark");
+				navbar.classList.remove("navbar-light");
+				navbar.classList.remove("bg-light");
 
-        function enableDarkMode() {
-            document.body.classList.add('dark-mode');
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => card.classList.add('dark-mode'));
-            const buttons = document.querySelectorAll('.btn-outline-primary');
-            buttons.forEach(btn => btn.classList.add('dark-mode'));
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.add('navbar-dark');
-            navbar.classList.add('bg-dark');
-            navbar.classList.remove('navbar-light');
-            navbar.classList.remove('bg-light');
+				// Update toggle button
+				const toggleBtn = document.querySelector(".dark-mode-toggle");
+				toggleBtn.textContent = "☀️";
+			}
 
-            // Update toggle button
-            const toggleBtn = document.querySelector('.dark-mode-toggle');
-            toggleBtn.textContent = '☀️';
-        }
+			function disableDarkMode() {
+				document.body.classList.remove("dark-mode");
+				const cards = document.querySelectorAll(".card");
+				cards.forEach((card) => card.classList.remove("dark-mode"));
+				const buttons = document.querySelectorAll(
+					".btn-outline-primary"
+				);
+				buttons.forEach((btn) => btn.classList.remove("dark-mode"));
+				const navbar = document.querySelector(".navbar");
+				navbar.classList.remove("navbar-dark");
+				navbar.classList.remove("bg-dark");
+				navbar.classList.add("navbar-light");
+				navbar.classList.add("bg-light");
 
-        function disableDarkMode() {
-            document.body.classList.remove('dark-mode');
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => card.classList.remove('dark-mode'));
-            const buttons = document.querySelectorAll('.btn-outline-primary');
-            buttons.forEach(btn => btn.classList.remove('dark-mode'));
-            const navbar = document.querySelector('.navbar');
-            navbar.classList.remove('navbar-dark');
-            navbar.classList.remove('bg-dark');
-            navbar.classList.add('navbar-light');
-            navbar.classList.add('bg-light');
+				// Update toggle button
+				const toggleBtn = document.querySelector(".dark-mode-toggle");
+				toggleBtn.textContent = "🌙";
+			}
 
-            // Update toggle button
-            const toggleBtn = document.querySelector('.dark-mode-toggle');
-            toggleBtn.textContent = '🌙';
-        }
+			function toggleDarkMode() {
+				const isDarkMode =
+					document.body.classList.contains("dark-mode");
 
-        function toggleDarkMode() {
-            const isDarkMode = document.body.classList.contains('dark-mode');
+				if (isDarkMode) {
+					disableDarkMode();
+					localStorage.setItem("darkMode", "false");
+				} else {
+					enableDarkMode();
+					localStorage.setItem("darkMode", "true");
+				}
+			}
 
-            if (isDarkMode) {
-                disableDarkMode();
-                localStorage.setItem('darkMode', 'false');
-            } else {
-                enableDarkMode();
-                localStorage.setItem('darkMode', 'true');
-            }
-        }
+			// Listen for system preference changes
+			window
+				.matchMedia("(prefers-color-scheme: dark)")
+				.addEventListener("change", (e) => {
+					// Only auto-switch if user hasn't manually set a preference
+					if (localStorage.getItem("darkMode") === null) {
+						if (e.matches) {
+							enableDarkMode();
+						} else {
+							disableDarkMode();
+						}
+					}
+				});
 
-        // Listen for system preference changes
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-            // Only auto-switch if user hasn't manually set a preference
-            if (localStorage.getItem('darkMode') === null) {
-                if (e.matches) {
-                    enableDarkMode();
-                } else {
-                    disableDarkMode();
-                }
-            }
-        });
-
-        // Initialize dark mode on page load
-        document.addEventListener('DOMContentLoaded', checkSystemPreference);
-    </script>
-</body>
-
+			// Initialize dark mode on page load
+			document.addEventListener(
+				"DOMContentLoaded",
+				checkSystemPreference
+			);
+		</script>
+	</body>
 </html>
