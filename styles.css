@@ -105,6 +105,11 @@ hr {
 	color: var(--sep);
 }
 
+.meta {
+	color: var(--sep);
+	font-size: 14px;
+}
+
 ul {
 	margin: 0;
 	padding: 0;
