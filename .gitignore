@@ -1,4 +1,4 @@
 robots.txt
-/.claude/
-/images/
+.claude/
+images/
 # sitemap.xml
