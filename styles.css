@@ -127,3 +127,40 @@ footer {
 	font-size: 14px;
 	color: var(--muted);
 }
+
+.post-body p,
+.post-body ul,
+.post-body pre {
+	margin: 0 0 16px;
+}
+
+.post-body p:last-child,
+.post-body pre:last-child {
+	margin-bottom: 0;
+}
+
+.post-body ul {
+	display: block;
+	padding-left: 22px;
+	list-style: disc;
+}
+
+.post-body li::before {
+	content: none;
+}
+
+.post-body h2 {
+	margin: 8px 0;
+}
+
+.post-body pre {
+	background: var(--rule);
+	border-radius: 4px;
+	padding: 12px 14px;
+	overflow-x: auto;
+	font-size: 14px;
+}
+
+.post-body code {
+	font-family: 'SFMono-Regular', Consolas, monospace;
+}

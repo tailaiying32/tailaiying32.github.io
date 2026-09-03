@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-C0JSH9NHVC"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-C0JSH9NHVC');
+	</script>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>{% if page.title %}{{ page.title }} — {% endif %}Tailai Ying</title>
+	<meta name="description" content="{{ page.description | default: site.description }}" />
+	<link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+</head>
+
+<body>
+	<main>
+		{{ content }}
+	</main>
+</body>
+
+</html>
