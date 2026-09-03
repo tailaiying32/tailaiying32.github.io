@@ -1,0 +1,11 @@
+title: Tailai Ying
+description: "Tailai Ying — CS Class of 2027, Cornell University."
+markdown: kramdown
+kramdown:
+  input: GFM
+permalink: /blog/:year/:month/:day/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
