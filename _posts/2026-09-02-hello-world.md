@@ -4,8 +4,4 @@ title: "Hello, World"
 date: 2026-09-02
 ---
 
-This is the first post on the new blog, set up with Jekyll and GitHub Pages.
-
-From here on, a new post is just a Markdown file dropped into `_posts/`, named `YYYY-MM-DD-title.md` with a small front-matter header up top.
-
-Push to `main`, and GitHub builds and publishes it automatically.
+This will be the very first post of my blog. As I approach recruiting season this year, I figured it would be a good idea to keep a running collection of things I've learned, notes, and thoughts. To whomever reads this, I hope you find these notes interesting :)
