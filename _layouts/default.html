@@ -16,6 +16,35 @@
 	<title>{% if page.title %}{{ page.title }} — {% endif %}Tailai Ying</title>
 	<meta name="description" content="{{ page.description | default: site.description }}" />
 	<link rel="stylesheet" href="{{ '/styles.css' | relative_url }}" />
+	{% if page.layout == 'post' or page.math %}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.css" crossorigin="anonymous">
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/katex.min.js" crossorigin="anonymous"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.22/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			document.querySelectorAll('script[type^="math/tex"]').forEach(function (el) {
+				if (typeof katex === 'undefined') return;
+				var display = /mode\s*=\s*display/.test(el.type);
+				var math = (el.textContent || '')
+					.replace(/^% <!\[CDATA\[\n?/, '')
+					.replace(/\n?% \]\]>$/, '');
+				var out = document.createElement(display ? 'div' : 'span');
+				katex.render(math, out, { displayMode: display, throwOnError: false });
+				el.parentNode.replaceChild(out, el);
+			});
+			if (typeof renderMathInElement === 'function') {
+				renderMathInElement(document.body, {
+					delimiters: [
+						{ left: '$$', right: '$$', display: true },
+						{ left: '\\[', right: '\\]', display: true },
+						{ left: '\\(', right: '\\)', display: false }
+					],
+					throwOnError: false
+				});
+			}
+		});
+	</script>
+	{% endif %}
 </head>
 
 <body>

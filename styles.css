@@ -164,3 +164,9 @@ footer {
 .post-body code {
 	font-family: 'SFMono-Regular', Consolas, monospace;
 }
+
+.post-body .katex-display {
+	margin: 12px 0 20px;
+	overflow-x: auto;
+	overflow-y: hidden;
+}

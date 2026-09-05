@@ -3,6 +3,7 @@ description: "Tailai Ying — CS Class of 2027, Cornell University."
 markdown: kramdown
 kramdown:
   input: GFM
+  math_engine: mathjax
 permalink: /blog/:year/:month/:day/:title/
 
 exclude:
