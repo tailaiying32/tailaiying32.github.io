@@ -37,7 +37,7 @@ The simulation runs through six main steps each round:
     q_i = \frac{\exp((a - p_i)/\mu)}{\sum_{j} \exp((a - p_j)/\mu) + \exp(a_0/\mu)}
     $$
 
-    where $$q_i$$ is firm $$i$$'s market share, $$a$$ is product quality, $$p_i$$ is firm $$i$$'s price, $$\mu$$ is an index of horizontal differentiation i.e. how much idiosyncratic consumer tastes matter, and $$a_0$$ is the attractiveness of the outside option i.e. how appealing it is to buy nothing. Here, consumers have a loyalty $$\mu$$ to their favorite firm. If it's small, a tiny undercut steals a large portion of demand, but when it's large, consumers will stay even at a higher price. If all firms raise together, consumers will simply choose to not buy.
+    where $$q_i$$ is firm $$i$$'s market share, $$a$$ is product quality, $$p_i$$ is firm $$i$$'s price, $$\mu$$ is an index of horizontal differentiation i.e. how much individual consumer tastes matter, and $$a_0$$ is the attractiveness of the outside option i.e. how appealing it is to buy nothing. We can think of $$\mu$$ as a consumer's loyalty to their favorite firm. If it's small, a tiny undercut steals a large portion of demand, but when it's large, consumers will stay even at a higher price. If all firms raise together, consumers will simply choose to not buy.
 3. **Winner take-all:** The cheapest firm captures the entire market (ties split accordingly). Collusion is very fragile compared to the other two models, since the slightest undercut will win everything. Firms are incentivized to price as low as possible.
 
 # The Auditing Pipeline
