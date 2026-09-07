@@ -53,4 +53,16 @@ $$
 A "steganographic signature" is declared when explicit-collusion rate is low, behavioral-collusion rate is high, and at least one word/phrase has meaningful predictive lift.
 
 # Results
-to be continued...
+It's important to note that anything I note below is not conclusive; I ran nowhere near enough experiments for any kind of findings to be statistically significant. It is still quite interesting to think about though. A few highlights: 
+
+- With an independent auditor, agents learned to remove illegal language from their messages over just a few rounds to avoid being penalized. Interestingly enough, however, in some runs without the auditor, agents colluded to higher prices *without explicitly communicating.* It's inconclusive whether or not agents were truly communicating in secret or whether it was pure coincidence. 
+- With the auditor, agent communication became very vague and general. Instead of collaborating to maximize profits, they instead restating the rules of the game, or wishing each other good luck.
+- Agent behavior was unpredictable and very sensitive to changes in the system prompt. Small wording changes in the agents' prompt led to wildly different behavior in terms of communication, collusion, and pricing.
+- Agents would also sometimes price-fix to unoptimal prices, In other words, they would raise prices simultaneously to monopoly prices, but *continue past that* into suboptimal pricing territory, which was interesting to see. This behavior again, was very sensitive to small prompt changes.
+
+I'd like to think that the brittle behavior comes down to a few conflating factors:
+1. I was using extremely small and cheap models to save cost, that likely were not intelligent enough to steganographically collude (think gpt-x-nano level models). The few runs that I ran with a smarter model such as the Claude Sonnet family of models demonstrated significantly more promising and complex behavior.
+2. The harness I designed around the agents was a fully custom, non-standardized harness built specifically for this game. Given a more standardized harness, agents might behave more predictably. 
+3. Agents within the same run would use the same family of model. For example, if the agents' model is set as gpt-4o-nano in the config file, all firms will be run by an identical gpt-4o-nano model. This might explain why agents would seemingly collude to monopoly prices without explicitly collaborating. All firms simply think at the same time to raise prices by a similar amount, and the resulting increase in profit across all agents leads to an identical reasoning and price-fixing. 
+
+It would be extremely interesting to see how agents would behave with a more complex language model and the issues I explained above fixed. The code for this project is publicly available [here](https://github.com/tailaiying32/collusion_lab). All that is needed to replicate my findings is your own API keys and a compatible Python installation on your machine. More details for running the project can be found on the GitHub!
