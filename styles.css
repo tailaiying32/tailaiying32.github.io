@@ -134,6 +134,13 @@ footer {
 	margin: 0 0 16px;
 }
 
+.post-body img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 24px 0;
+}
+
 .post-body p:last-child,
 .post-body pre:last-child {
 	margin-bottom: 0;

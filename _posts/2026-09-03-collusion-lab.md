@@ -31,7 +31,7 @@ The simulation runs through six main steps each round:
 
     where $$q_i$$ is the number of units the $$i$$th firm sells, $$a$$ is the demand intercept i.e. how much a firm would sell at very low prices, $$b$$ is the own-price slope i.e. how much a firm loses by charging more, $$d$$ is the cross-price slope i.e. how much a firm gains when rivals charge more, and $$\bar{p}$$, the average rival price. I chose this as the default model since it's more intuitive than Calvano, but much gentler than the winner-take-all model. 
 
-2. **Calvano logit demand:** This is included as a comparison to the linear default, and comes from Calvano et al. (2020). Rather than raw units, quantities here are market shares, and consumers can also choose to buy nothing. The Calvano demand model is
+2. **Calvano logit demand:** This is included as a comparison to the linear default, and comes from [Calvano et al. (2020)](https://www.aeaweb.org/articles?id=10.1257/aer.20190623). Rather than raw units, quantities here are market shares, and consumers can also choose to buy nothing. The Calvano demand model is
 
     $$
     q_i = \frac{\exp((a - p_i)/\mu)}{\sum_{j} \exp((a - p_j)/\mu) + \exp(a_0/\mu)}
