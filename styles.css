@@ -130,7 +130,8 @@ footer {
 
 .post-body p,
 .post-body ul,
-.post-body pre {
+.post-body pre,
+.post-body figure {
 	margin: 0 0 16px;
 }
 
@@ -139,6 +140,25 @@ footer {
 	height: auto;
 	display: block;
 	margin: 24px 0;
+}
+
+.post-body figure {
+	margin: 8px 0 24px;
+	overflow-x: auto;
+}
+
+.post-body figcaption {
+	font-size: 14px;
+	color: var(--muted);
+	margin-top: 8px;
+	line-height: 1.45;
+}
+
+.post-body svg.chart {
+	width: 100%;
+	height: auto;
+	display: block;
+	overflow: visible;
 }
 
 .post-body p:last-child,
