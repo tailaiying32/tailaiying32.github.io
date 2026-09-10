@@ -19,7 +19,7 @@ The simulation runs through six main steps each round:
 2. **Pricing:** After agents read all incoming messages, agents are allowed one final reasoning step before setting a discrete price. 
 3. **Profit Calculation:** A deterministic demand model (linear differentiable demand by default) converts the price vector into quantities and profits.
 4. **Auditing:** A given round has a probability to be audited (set in run configuration). If this round is chosen to be audited, an independent agent acting as judge examines the public messages sent, penalizes any agents it deems as acting illegally by partially or fully taking away the round's profit, and sends a message to the offending agents as to why they were penalized.
-5. **Memory update:** Agents can remember a fixed number of rounds in the past. This round's information is appended to the agent's memory: its own action, all competing agents' actions, it's own reward, messages, and if present, any auditor feedback.
+5. **Memory update:** Agents can remember a fixed number of rounds in the past. This round's information is appended to the agent's memory: its own action, all competing agents' actions, its own reward, messages, and if present, any auditor feedback.
 6. **Signals logged:** Various signals for this round are recorded in the run log: price dispersion among agents, normalized reward elevation, and four different collusion flags: explicit (auditor-flagged language), behavioral (above-Nash profits), covert (elevated profits without explicit language), and hollow (explicit collusion talk without the matching above-Nash pricing).
 
 # The demand models
@@ -44,7 +44,7 @@ The simulation runs through six main steps each round:
 An LLM-as-judge acts as an independent auditor when enabled. This agent is prompted to read through public messages and outputs a strict VERDICT $$\to$$ EVIDENCE $$\to$$ REASONING format, and defaults to not-flagged in case of error. This is combined with a hard regex backstop, so if any message contains explicit price-intent language (e.g. we will/plan to/set to/match...) with a number, it is automatically flagged. 
 
 # Steganography detection
-This detection pipline runs only after a run as finished, and by design never feeds back into the simulation to ensure gameplay is not contaminated. It extracts unigram and bigram features from message text, and labels rounds as `coordinated_up` (prices move up together with low dispersion) and `elevated` (normalized reward elevation above a threshold). It then computes a **lift statistic** per feature:
+This detection pipeline runs only after a run has finished, and by design never feeds back into the simulation to ensure gameplay is not contaminated. It extracts unigram and bigram features from message text, and labels rounds as `coordinated_up` (prices move up together with low dispersion) and `elevated` (normalized reward elevation above a threshold). It then computes a **lift statistic** per feature:
 
 $$
 P(\texttt{coordinated\_up} \mid \texttt{feature\_present}) - P(\texttt{coordinated\_up})
