@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Production machine learning systems and why they are hard"
+date: 2026-09-27
+---
+
+I've always been very interested in the field of machine learning. It's super cool to me how we're essentially able, through machine learning, to teach computers to learn from data and make predictions without explicitly being programmed. I took both Intro to Machine Learning and Deep Learning as technical electives during my time at Cornell because of this interest. In these classes, we were taught a huge assortment of different machine learning techniques, models, architectures, etc. While this knowledge is obviously very important and sits at the core of machine learning as a study, it is not all that is needed to create a production-level machine learning system. In fact, it's not even *close* to being all that is needed, as shown in the image below. (source: Andrew Ng's [MLOps Course](https://www.coursera.org/learn/introduction-to-machine-learning-in-production))
+
+![An approximation of all that goes into an ML system](https://changyaochen.github.io/assets/images/ml_hidden_debt.png)
+
+In a real-world system, there's so much that we have to account for in order for our machine learning model to work properly. Many of these issues are explained in the famous 2015 paper [Hidden Technical Debt in Machine Learning Systems](https://proceedings.neurips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf) by Sculley et al. at Google. This post is an attempt at explaining some of these issues, among other things. In the last ten years or so, this field has grown so much that the industry even coined a term for it: "MLOps". We now have engineers --- entire teams, even --- whose sole job is to identify these issues and fix them before they wreak havoc in production.
+
+# ML systems are deeply coupled
+One of the biggest issues when it comes to machine learning systems is that things are tightly tangled together. Unlike in traditional software engineering, where strong abstraction and modular design can be enforced and are generally preferred for maintainability, it is very difficult to do the same in ML systems. This concept is commonly referred to as the **CACE principle: Changing Anything Changes Everything**. We will examine some examples of this principle below.
+
+1. ML systems mix a large number of data inputs together, which entangles them and makes the effects of changes hard to isolate. For example, if our system takes in features $$x_1, x_2, ..., x_n$$, and we change the distribution of $$x_i$$ or add/remove a feature, the weights of the other features may need to change. It is impossible to predict how they need to change, only that they will need to change. 
+2. We often come across situations where we need to solve some problem that is similar to the original. For these cases, rather than building an entirely new model from scratch, it can be easier to simply allow our new model to take the original model as input and have it learn a small adjustment. This chain of corrections can cascade into a **correction cascade**, in which newer models are dependent on their ancestor models. Once established, a correction cascade makes it extremely difficult to improve the system, as improving any arbitrary component within the cascade can mean degradation of the whole system. 
+3. In a similar vein, we also often come across situations where the input of one model comes from the output of another. Like above, we can stack these models arbitrarily on top of each other into what is known as a **model cascade**. This leads to a similar issue where if we tweak an upstream model, it degrades the performance of all downstream models since downstream models were trained on the old output.
+
+# Feedback loops
+ML systems oftentimes also influence themselves over time. Let us think about a recommendation system on an e-commerce site, for example. The algorithm suggests a specific product based on past data, and as a result that product becomes the most prominent on the user's screen. Because it is the most prominent, the user clicks on it, sending positive feedback to the model, even though that product wasn't necessarily the user's top choice. The system then retrains on this new piece of data, over time becoming further convinced that this product is the user's favorite. This general process is what is called a **direct feedback loop**, and can lead to an echo chamber effect.
+
+Another common, but more subtle feedback loop is a **hidden feedback loop**, where two or more systems indirectly affect each other through the real world. Building on the recommendation example, imagine we now have a fraud detection model. The recommendation model begins boosting a cheap product as a result of some kind of trend it sees, and users now begin buying this product in bulk since it is cheap and highly available. The fraud model monitors user activity and sees a huge spike in identical checkout patterns. Thinking these users are bots, it aggressively flags or bans them from the platform. The recommendation model sees this sudden drop in engagement, interprets it as a sign that its recommendations failed, and radically changes its algorithm. This is dangerous since on paper, the code and metrics for both models are perfectly fine, yet business metrics collapse due to this unforeseen interaction through human behavior.
+
+# The real world isn't neat
+The real world isn't neat. This is a fundamental fact of life --- the world around us is constantly changing and evolving. Machine learning systems are neat. They train on clean fixed datasets, and learn to recognize patterns in a sterile snapshot of life, but oftentimes fail to recognize that life moves on. 
+
+A great example of this is the [Google Flu Trends](https://en.wikipedia.org/wiki/Google_Flu_Trends) project. This project was launched by Google in 2008 to predict and track influenza activity faster than traditional methods. By 2013, it was completely misreporting flu trends, overestimating flu prevalence by over 140% that year. Ultimately, the project was quietly shut down in 2015 following several critical studies. Today, it remains as an artifact of what happens when you assume the world will sit still.
+
+So what exactly went wrong? Surely Google, with the unlimited wealth of data at their disposal, could've built a bulletproof model? To answer this question, we need to zoom in closer on the mechanics of how this model operated. The idea behind Flu Trends was simple. Google took the CDC's historical flu reports and searched through millions of possible search terms for the ones that correlated best with upward trends in flu numbers. The best matching terms became the model's inputs: if those queries went up in a particular region, the model would predict higher flu number there. Because people generally search online before visiting a doctor, it was estimated that Flu Trends could predict flu prevalence 1-2 weeks faster than traditional health reporting networks. 
+
+However, this approach only works if a few things stay true. People have to keep searching for the same reasons they did when the model was trained. A rise in those searches must actually correlate with higher flu numbers. And, Google Search itself has to stay the same. Over the seven years that Flu Trends was in operation, all three of those assumptions broke, in a process we generally refer to as **drift**. Flu Trends didn't fail because of a lack of data or poor engineering --- it failed due to methodological flaws that overlooked the dynamism of the world.
+
+## Data drift
+**Data drift** occurs when the inputs a model sees in production start to look different from the inputs it saw during training. From 2008 to 2013, the demographics and behavior of internet users changed dramatically with the advent of smartphones, easy internet access, and general health literacy. External events such as intense news coverage of bad flu seasons, exacerbated this change, triggering sudden spikes in flu-related searches, even among perfectly healthy people. As a result, the model, which had been trained to associate search volumne with flu numbers, began to overestimate prevalence of the flu. 
+
+## Concept drift
+**Concept drift** is when the relationship between the input data and output changes. 
+
+to be continued...
+
+## Upstream drift
